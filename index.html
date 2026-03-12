@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en-GB">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TODO Page home Title</title>
+        <meta name="description" content="TODO" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.ico" />
+
+        <!--//load fonts quicker if in cache//-->
+        <script>
+        if (sessionStorage.getItem("cache-primed") == "yes") {
+            document.documentElement.classList.add("js-cache-primed");
+        } else {
+            window.addEventListener("load", function () {
+                sessionStorage.setItem("cache-primed", "yes");
+            });
+        }
+        </script>
+
+        <script>
+        function deferredStylesHaveLoaded() {
+            return document.documentElement.classList.contains("js-deferred-styles-loaded");
+        }
+        </script>
+
+        <style>* { margin: 0; padding: 0; }
+html, body, div, ul, ol, table, form, textarea { width: 100%; }
+body { min-height: 100vh; line-height: 1.5; color: #323232; background-color: #FFF; }
+a { text-decoration-skip-ink: auto; text-decoration: none; }
+img { max-width: 100%; display: block; }
+a img { border-style: none; }
+input, button, textarea, optgroup, select, pre, code, kbd, samp { font-family: inherit; font-size: 1em; overflow: auto; }
+div { box-sizing: border-box; }
+.no-transition { transition: none !important; }
+.hidden, div.template {display: none;}
+.js-first-session-visit-only { display: none; }
+.clickable { cursor: pointer; }
+.justify { text-align: justify; }
+h1, h2, h3, h4, h5, h6 { font-weight: inherit; font-size: inherit; }
+
+
+body {
+    min-width: 320px;
+    font-size: 16px;
+}
+
+    /*https://fonts.tawesoft.net/ubuntu/UFL.txt*/
+
+    @font-face {
+        font-family: "Ubuntu (unprimed cache)";
+        src: url("fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Ubuntu (primed cache)";
+        src: url("fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+    }
+
+    html {
+        font-family: "Ubuntu (unprimed cache)", sans-serif;
+    }
+
+    html.js-cache-primed {
+        font-family: "Ubuntu (primed cache)", sans-serif;
+    }
+
+
+    
+    body > div.block { padding-left: 20px; padding-right: 20px; }
+    div.block { margin: 0 auto; }
+    div.block.full   {}
+    div.block.medium { max-width: 1260px; }
+    div.block.large  { max-width: 1900px; }
+
+    div.background {
+        background-color: #b6002f;
+        color: #ffffff
+    }
+
+</style>
+
+
+
+        <link rel="preload" href="deferred.css" as="style" onload="this.onload=null;this.rel='stylesheet';document.documentElement.classList.add('js-deferred-styles-loaded')" />
+        <noscript><link rel="stylesheet" href="deferred.css" /></noscript>
+
+        <script>
+            var usedScripts = [];
+            (function (i){
+                
+                i.push("component:main-navigation [deferred]");
+                
+            }(usedScripts));
+        </script>
+
+        <script defer="defer" src="deferred.js"></script>
+
+
+            <!--//component:main-navigation [priority]//-->
+            <style>.main-navigation {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+    .main-navigation a {
+        color: #686062;
+    }
+
+    .main-navigation a:hover {
+        text-decoration: underline;
+    }
+
+    .main-navigation a > span.first {
+        color: #B6002F;
+    }
+
+.main-navigation__container {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 150px;
+    display: flex;
+}
+
+.main-navigation__logo {
+    display: inline-block;
+    min-width: 212px;
+    width: 212px;
+    height: 150px;
+}
+.main-navigation__logo a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 100px;
+    display: block;
+}
+.main-navigation__logo img {
+    width: 100%;
+    height: 100px;
+}
+
+.main-navigation__links {
+    display: block;
+    height: 100px;
+}
+
+    .main-navigation__links ul {
+        height: 150px;
+        display: flex;
+        list-style: none;
+    }
+
+        .main-navigation__links li {
+            display: inline-block;
+            width: 33%;
+            height: 150px;
+        }
+
+            .main-navigation__links a {
+                position: relative;
+                z-index: 1000; /* always appear above a child list */
+                height: 100px;
+                padding-top: 25px; padding-bottom: 25px;
+
+                display: block;
+                width: 100%;
+                text-decoration: none;
+                vertical-align: middle;
+                line-height: 75px;
+
+                text-align: right;
+            }
+
+                .main-navigation__links a > span {
+                    display: block;
+                    height: 25px;
+                }
+
+
+.main-navigation__dropdown {
+    visibility: hidden;
+}
+
+.main-navigation__hamburger {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.main-navigation__close {
+    display: none;
+}
+
+@media (min-width: 650px) and (max-width: 1000px) {
+    .main-navigation__links li.optional {
+        display: none !important;
+    }
+}
+
+@media (max-width: 750px) {
+    .main-navigation {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .main-navigation__links {
+        width: 50px;
+        position: absolute;
+        right: 16px;
+    }
+
+    .main-navigation__links ul {
+        display: none !important;
+    }
+
+    .main-navigation__dropdown {
+        display: none !important;
+    }
+}</style>
+        
+        
+
+        
+
+        <!--//page:home [head]//--> 
+<style>
+     
+    div.setpiece {
+        background-color: #bbd7cb;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('backgrounds/daffodils-wide.jpg');
+        background-position: bottom right;
+
+        position: relative;
+        width: 100%;
+        padding: 25%;
+    }
+
+        div.setpiece__content {
+            position: relative;
+            height: 0;
+            overflow: visible;
+            margin-top: -20%;
+        }
+
+        div.setpiece br.hint {
+            display: none;
+        }
+
+    @media (max-width: 1610px) {
+        div.setpiece {
+            background-image: url('backgrounds/daffodils-tall.jpg');
+            background-position: bottom 100%;
+            padding: 50%;
+            padding-bottom: 25%;
+            min-height: 800px;
+        }
+            div.setpiece__content {
+                margin-top: -45%;
+            }
+
+        div.setpiece br.hint {
+            display: inline;
+        }
+    }
+     
+    div.setpiece {
+        font-size: 18px;
+        color: #323232;
+    }
+        div.setpiece h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #456d5c;
+        }
+
+        div.setpiece div.text a {
+            color: #065533;
+            text-decoration: underline;
+        }
+
+        div.setpiece ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1em;
+            grid-row-gap: 1em;
+            list-style: none;
+            max-width: 600px;
+        }
+
+            div.setpiece li {
+                display: flex;
+            }
+
+                div.setpiece li a {
+                    color: #065533;
+                    display: block;
+                    width: 100%;
+                    padding: 1em;
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+
+                div.setpiece li a:hover {
+                    background-color: rgba(255, 255, 255, 0.7);
+                }
+
+                div.setpiece p.title {
+                    margin-bottom: 0.5em;
+                }
+
+                div.setpiece p.small {
+                    font-size: 14px;
+                    color: #456d5c;
+                }
+
+    @media (max-width: 570px) {
+        div.setpiece {
+            padding-top: 35%;
+            min-height: 900px;
+        }
+        div.setpiece ul {
+            display: block;
+        }
+        div.setpiece li {
+            margin-bottom: 1em;
+        }
+    }
+
+    @media (max-width: 450px) {
+        div.setpiece h1 {
+            font-size: 24px;
+        }
+    }
+</style>
+
+    </head>
+    <body>
+        <!--//page:home [en]//-->
+        
+
+<div id="js-main-navigation" class="main-navigation" role="navigation">
+    <div class="block">
+        <div class="main-navigation__container block medium">
+            <div class="main-navigation__logo"><a href="/"><img src="media/logo-saesneg.png" alt="TUSC logo"/></a></div>
+            <div id="js-main-navigation__links" class="main-navigation__links" onclick="this.classList.toggle('active')">
+                <div class="main-navigation__hamburger clickable">
+<span class="icon"><svg
+    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+    <!--//Icon -- Copyright (c) 2019-2021 The Bootstrap Authors (https://github.com/twbs/icons)//-->
+    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg></span>
+</div>
+                <div class="main-navigation__close clickable">
+<span class="icon"><svg
+    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="50" height="50" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+    <!--//Icon -- Copyright (c) 2019-2021 The Bootstrap Authors (https://github.com/twbs/icons)//-->
+    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+</svg></span>
+</div>
+                <ul>
+                    <li class="optional"><a href="/"><span lang="en-GB" class="en text first">Home</span> <span lang="cy" class="cy text second">Hafan</span></a></li>
+                    <li data-section="senedd2026"><a href="/en/senedd2026"><span lang="en-GB" class="en text first">Senedd 2026</span> <span lang="cy" class="cy text second">Senedd 2026</span></a></li>
+                    <li data-section="support"><a href="/en/support"><span lang="en-GB" class="en text first">Support us</span> <span lang="cy" class="cy text second">Cefnogwch ni</span></a></li>
+                    <li data-section="about"><a href="/en/about"><span lang="en-GB" class="en text first">About</span> <span lang="cy" class="cy text second">Amdanom</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="js-main-navigation__dropdown" class="main-navigation__dropdown" aria-hidden="true"></div>
+</div>
+<div id="js-main-navigation__fader"></div>
+
+
+    
+<style>
+.feature-leader {
+    color: #B6002F;
+    text-align: center;
+    font-size: 42px;
+    
+}
+
+/* tweak to hide SVG inaccuracies that left a border at certain window sizes */
+.feature-leader__wrapper { position: relative; top: -1px; }
+
+.feature-leader__text {
+    padding-top: 1em;
+}
+.feature-leader__buttons {
+    position: absolute;
+    z-index: 30;
+    height: 0;
+    overflow: visible;
+    padding-top: 4.95em;
+}
+.feature-leader__buttons a {
+    font-size: 24px;
+    display: inline-block;
+    color: #FFF;
+    background-color: #B6002F;
+    padding: 0.2em 1em;
+    margin: 0 0.5em;
+}
+.feature-leader__buttons a:hover {
+    background-color: #F90040;
+}
+
+@media (max-width: 1610px) { .feature-leader { font-size: 36px; } .feature-leader__text { padding-top: 0.66em; } }
+@media (max-width: 1210px) { .feature-leader { font-size: 30px; } .feature-leader__text { padding-top: 0.33em; } }
+@media (max-width:  800px) { .feature-leader { font-size: 24px; } .feature-leader__text { padding-top: 0.0em; } }
+
+.feature-contact-footer {
+    color: #EEE;
+    background-color: #B6002F;
+}
+.feature-contact-footer__form {
+    padding: 0 2em;
+}
+.feature-contact-footer__form .title {
+    font-size: 42px;
+}
+.feature-contact-footer__smallprint {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2em 6em;
+    max-width: 650px;
+    border-top: 1em solid #FFF;
+    margin-top: 6em;
+}
+.feature-contact-footer__smallprint a {
+    color: #FFF;
+    text-decoration: underline;
+}
+.feature-contact-footer__smallprint p {
+    margin-bottom: 1em;
+}
+
+
+.feature.curve::before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0px;
+    content: " ";
+    z-index: 10;
+}
+.feature.curve:after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0px;
+    content: " ";
+    z-index: 10;
+}
+.feature.curve > div.content {
+    position: relative;
+    z-index: 20;
+}
+
+.feature.curve-down {
+    height: 0;
+    overflow: visible;
+}
+.feature.curve-down.curve-white::before {
+    background-image: url("backgrounds/curve-white-down.svg");
+    background-position: center bottom;
+    background-size: cover;
+    padding-bottom: 5.95em;
+}
+
+.feature.curve-wave.curve-red::before {
+    background-image: url("backgrounds/curve-red-wave.svg");
+    background-position: center top;
+    background-size: cover;
+    padding-top: 180px;
+    margin-top: -180px;
+}
+
+
+.feature.curve-wave.curve-red::after {
+    background-image: url("backgrounds/curve-red-wave-mirrored.svg");
+    background-position: center bottom;
+    background-size: cover;
+    padding-top: 180px;
+}
+
+
+
+.follow-curve-down {
+    padding-top: 250px;
+}
+.preceede-curve-wave {
+
+}
+
+</style>
+
+    <div class="feature-leader__wrapper">
+        <div class="feature feature-leader curve curve-down curve-white">
+            <div class="feature-leader__buttons">
+                <div class="block medium content">
+                    <a href="#">Get in touch</a>
+                    <a href="#" lang="cy">Siarrad Cymraeg?</a>
+                </div>
+            </div>
+            <div class="feature-leader__text block medium content">
+                <p>
+                For a <i>Socialist</i> voice in the Senedd,<br />vote <b>✘ Welsh Trade Unionist and Socialist</b></p>
+            </div>
+        </div>
+    </div>
+
+    
+
+        <div class="block setpiece background">
+            <div class="block setpiece__content"><div class="block medium follow-curve-down precede-curve-wave">
+
+
+    <ul>
+        <li><a href="#"><div><p class="title">Policy 1</p><p class="small">Professional solutions for every project size and budget.</p></div></a></li>
+        <li><a href="#"><div><p class="title">Policy 2</p><p class="small">Expert full stack &amp; Go language developers.</p></div></a></li>
+        <li><a href="#"><div><p class="title">Policy 3</p><p class="small">SEO audits, digital advertising, and content marketing.</p></div></a></li>
+        <li><a href="#"><div><p class="title">Policy 4</p><p class="small">Professionally produced leaflets, banners, and more.</p></div></a></li>
+        <li><a href="#"><div><p class="title">Policy 5</p><p class="small">SEO audits, digital advertising, and content marketing.</p></div></a></li>
+        <li><a href="#"><div><p class="title">Policy 6</p><p class="small">Professionally produced leaflets, banners, and more.</p></div></a></li>
+    </ul>
+
+            
+
+        </div></div>
+    </div>
+
+
+
+
+<div class="feature feature-contact-footer curve curve-wave curve-red">
+    <div class="block medium content feature-contact-footer__form">
+        <p class="title">Get in touch today</p>
+        
+        <p>Imprint</p>
+        
+    </div>
+</div>
+
+
+        <!--//component:main-navigation [deferred]//-->
+
+<div class="template">
+    <div id="js-main-navigation__senedd2026-dropdown" class="wide">
+        <div class="group">
+            <div class="title with-icon">
+<span class="icon"><svg
+    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="30" height="30" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+    <!--//Icon -- Copyright (c) 2019-2021 The Bootstrap Authors (https://github.com/twbs/icons)//-->
+    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+</svg></span>
+ <span lang="en-GB" class="en text first">Senedd 2026</span> <span lang="cy" class="cy text second">Senedd 2026</span></div>
+            <ul>
+                <li><a href="/en/policy/senedd2026/manifesto"><span lang="en-GB" class="en text first">Manifesto - what we stand for</span> <span lang="cy" class="cy text second">Maniffesto</span></a></li>
+                <li><a href="/en/policy/senedd2026/candidates"><span lang="en-GB" class="en text first">Candidates</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+            </ul>
+        </div>
+        <div class="group">
+            <div class="title with-icon">
+<span class="icon"><svg
+    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="30" height="30" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16">
+    <!--//Icon -- Copyright (c) 2019-2021 The Bootstrap Authors (https://github.com/twbs/icons)//-->
+    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+    <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
+</svg></span>
+ <span lang="en-GB" class="en text first">Core policies</span> <span lang="cy" class="cy text second">Core policies</span></div>
+            <ul>
+                <li><a href="/en/policy/core"><span lang="en-GB" class="en text first">Open source software</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="js-main-navigation__support-dropdown">
+        <div>
+            <ul>
+                <li><a href="/en/support/vote"><span lang="en-GB" class="en text first">Vote for us</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+                <li><a href="/en/support/donate"><span lang="en-GB" class="en text first">Donate</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+                <li><a href="/en/support/poster"><span lang="en-GB" class="en text first">Order window posters</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+                <li><a href="/en/support/social-media"><span lang="en-GB" class="en text first">Share our social media</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+                <li><a href="/en/support/volunteer"><span lang="en-GB" class="en text first">Volunteer</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+                <li><a href="/en/support/join"><span lang="en-GB" class="en text first">Join the socialists!</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="js-main-navigation__about-dropdown">
+        <div>
+            <ul>
+                <li><a href="/en/about/tusc"><span lang="en-GB" class="en text first">About TUSC</span> <span lang="cy" class="cy text second">Ynglyn â TUSC</span></a></li>
+                <li><a href="/en/about/contact"><span lang="en-GB" class="en text first">Contact Us</span> <span lang="cy" class="cy text second">Cysylltu â Ni</span></a></li>
+                <li><a href="/en/about/privacy"><span lang="en-GB" class="en text first">Press centre</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+                <li><a href="/en/about/privacy"><span lang="en-GB" class="en text first">Imprint</span> <span lang="cy" class="cy text second">TODO</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+    </body>
+</html>
