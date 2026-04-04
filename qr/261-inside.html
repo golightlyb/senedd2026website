@@ -1,1 +1,103 @@
-<body><big><big><b></b>TODO</b> - This is the QR code for the inside of the Swansea leaflet.</big></big></body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1;url=https://socialist.wales/">
+    <title>Redirecting...</title>
+    
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #343a40;
+            --accent-color: #007bff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 400px;
+        }
+
+        /* Animated Graphic */
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FFF;
+            border-bottom-color: var(--accent-color);
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .fallback-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .fallback-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Noscript styling */
+        noscript {
+            display: block;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="loader"></div>
+        <h1>Loading...</h1>
+        <p>
+            If you aren't redirected in a few seconds, 
+            <a href="https://socialist.wales/" class="fallback-link">click here</a>.
+        </p>
+
+        <noscript>
+            Your browser has JavaScript disabled or does not support meta-refresh. 
+            Please <a href="https://socialist.wales/">click here to proceed manually</a>.
+        </noscript>
+    </div>
+
+</body>
+</html>
