@@ -6,7 +6,16 @@
         <meta name="description" content="Vote for a future for young people without debt, war or climate disaster." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="icon" href="/favicon.ico" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="./media/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./media/favicon//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./media/favicon/favicon-16x16.png">
+<link rel="manifest" href="./media/favicon/site.webmanifest">
+<link rel="shortcut icon" href="./media/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="./media/favicon/browserconfig.xml">
+
+
 
 <!--// html meta.html //-->
 
@@ -505,6 +514,78 @@ body {
 /* end setpiece.css */
 
         
+        
+            /* css newstiles.css */
+
+.newstiles .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.newstiles .content .tile {
+    flex: 0 1 calc(33.333% - 20px); 
+    box-sizing: border-box;
+    
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center; 
+
+    text-align: center;
+    
+    align-items: flex-end;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+
+
+    background-color: #f4f4f4;
+    
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease;
+
+    background-size: cover;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
+.newstiles .content .tile:hover {
+    transform: translateY(-5px);
+    background-color: #eee;
+}
+
+.newstiles .content .tile .caption {
+
+    width: 100%;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .newstiles .content .tile {
+        flex: 0 1 calc(50% - 20px);
+        font-size: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .newstiles .content .tile {
+        flex: 1 1 100%;
+        font-size: 70%;
+    }
+}
+
+
+
+
+/* end newstiles.css */
+
+        
     </style>
 
     </head>
@@ -736,6 +817,28 @@ body {
         <div class="feature-about-footer__buttons">
             <div class="block medium content">
                 <a href="./en/support/">Find out how <b>you can help</b></a>
+            </div>
+        </div>
+        <h2 class="subtitle next">News</h2>
+        <div class="newstiles">
+            <div class="block medium content">
+                <a class="tile" target="_blank" href="https://www.tuscwales.org.uk/2026/03/swansea-disability-campaigner-to-head.html"
+                    style="background-image:url('./media/newstiles/2026/swansea-disability-campaigner.jpg');">
+                    <div class="caption">Swansea disability campaigner to head Senedd party list</div>
+                </a>
+                <a class="tile" target="_blank" href="https://www.tuscwales.org.uk/2026/03/pub-worker-to-head-cardiff-election.html"
+                    style="background-image:url('./media/newstiles/2026/cardiff-pub-worker.jpg');">
+                    <div class="caption">Pub worker to head Cardiff election campaign</div>
+                </a>
+                <a class="tile" target="_blank" href="https://www.tuscwales.org.uk/2026/03/welsh-socialist-election-campaign.html"
+                    style="background-image:url('./media/newstiles/2026/launch.jpg');">
+                    <div class="caption">Welsh Socialist election campaign launched</div>
+                </a>
+                <a class="tile" target="_blank" href="https://www.tuscwales.org.uk/2026/03/open-letter-to-your-party-from-tusc.html"
+                    style="background-image:url('./media/newstiles/2026/your-party.png');">
+                    <div class="caption">Open letter to 'Your Party' from TUSC Cymru</div>
+                </a>
+                
             </div>
         </div>
     </div>
